@@ -137,6 +137,6 @@ project-root/
 
 ## 👤 Author
 
-**Bhuvan**  
+
 Blending code with composition 🎹  
 *Exploring the frontiers of generative art and sound.*
