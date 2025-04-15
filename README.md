@@ -74,20 +74,50 @@ All notebooks rely on the following libraries and tools:
 
 ---
 
-## 🔊 Audio Evaluation
+## 🎼 Dataset
 
-Each notebook references generated MIDI files, with `.wav` conversions for easier listening.
-
-> 🎧 MIDI files can be tricky to play in-browser; `.wav` files are better for evaluation.
+All models were trained using the MIDI files from the following dataset:  
+📂 **Classical Music MIDI**  
+🔗 [Available on Kaggle](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi)
 
 ---
 
-## 🧠 Why This Project?
+## 🚀 How to Run the Notebooks
 
-Exploring music generation across composers helps us understand:
-- How different musical styles impact learning
-- How models internalize rhythm, harmony, and structure
-- The creative potential of AI in the arts
+To run the evaluation notebooks:
+
+1. **Clone the repository** (or download the files manually):
+    ```bash
+    git clone https://github.com/yourusername/ai-composer-series.git
+    cd ai-composer-series
+    ```
+
+2. **Install the required libraries**:  
+    Create a virtual environment (optional but recommended), then install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Launch Jupyter Notebook**:
+    ```bash
+    jupyter notebook
+    ```
+    Open the notebook for your desired composer (e.g., `BI-mozart.ipynb`) in the browser.
+
+4. **Run All Cells**:  
+    Inside the notebook, click on `Kernel > Restart & Run All` to evaluate the model and generate outputs.
+
+5. **Optional – MIDI to WAV Conversion**:
+    To convert generated MIDI files to `.wav`, use:
+    ```bash
+    timidity output.mid -Ow -o output.wav
+    ```
+    or with `fluidsynth`:
+    ```bash
+    fluidsynth -ni soundfont.sf2 output.mid -F output.wav -r 44100
+    ```
+
+> 🎧 *Make sure you have `timidity` or `fluidsynth` installed on your system if you want to listen to audio output.*
 
 ---
 
@@ -95,13 +125,12 @@ Exploring music generation across composers helps us understand:
 
 ```
 project-root/
-│
 ├── BI-Albeniz.ipynb
 ├── BI-bach.ipynb
 ├── BI-brahms.ipynb
 ├── ...
-├── samples/           # Optional folder for audio outputs
-└── README.md          # You're reading it!
+├── samples/              # Optional folder for audio outputs
+└── README.md             # You're reading it!
 ```
 
 ---
@@ -111,15 +140,3 @@ project-root/
 **Bhuvan**  
 Blending code with composition 🎹  
 *Exploring the frontiers of generative art and sound.*
-
-
----
-
-## 🎼 Dataset
-
-All models were trained using the MIDI files from the following dataset:  
-📂 **Classical Music MIDI**  
-🔗 [Available on Kaggle](https://www.kaggle.com/datasets/soumikrakshit/classical-music-midi)
-
-This dataset includes a rich collection of MIDI files from various classical composers — ideal for training music generation models.
-
